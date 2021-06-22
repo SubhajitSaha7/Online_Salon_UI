@@ -6,11 +6,15 @@ import { AppComponent } from './app.component';
 import { AppointmentComponent } from './appointment/appointment.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { BankComponent } from './bank/bank.component';
+import { ViewbankaccbyidComponent } from './viewbankaccbyid/viewbankaccbyid.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AppointmentComponent
+    AppointmentComponent,
+    BankComponent,
+    ViewbankaccbyidComponent
   ],
   imports: [
     BrowserModule,
