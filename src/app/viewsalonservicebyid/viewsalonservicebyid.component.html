@@ -1,0 +1,51 @@
+<div class="col-6 mx-auto p-2 m-2">
+  <input type="number" placeholder="Enter Salon Service ID" [(ngModel)]="sid" class="form-control"/>
+  <input type="button" value="Search" (click)="viewbyid()" class="btn btn-info"/>
+</div>
+<section>
+  <div *ngIf="msg!=undefined" class="alert alert-danger">{{msg}}</div>
+  <table class="table table-primary table-striped" *ngIf="salonservices!=undefined">
+    <tr>
+      <td>Salon Service ID</td>
+      <td>{{salonservices.serviceId}}</td>
+    </tr>
+
+    <tr>
+      <td>Salon Service Name</td>
+      <td>{{salonservices.serviceName | titlecase}}</td>
+    </tr>
+
+    <tr>
+      <td>Service Price</td>
+      <td>{{salonservices.servicePrice | currency:'INR'}}</td>
+    </tr>
+
+    <tr>
+      <td>Service Duration</td>
+      <td>{{salonservices.serviceDuration}}</td>
+    </tr>
+
+    <tr>
+      <td>Discount</td>
+      <td>{{salonservices.discount}}</td>
+    </tr>
+
+    <tr>
+      <td>Salon Address</td>
+      <td>{{salonservices.salonAddress | titlecase}}</td>
+    </tr>
+
+    <tr>
+      <td>Salon Location</td>
+      <td>{{salonservices.salonLocation | titlecase}}</td>
+    </tr>
+
+    <tr>
+      <td>Salon Centre Name</td>
+      <td>{{salonservices.salonCentreName | titlecase}}</td>
+    </tr>
+
+  </table>
+</section>
+
+

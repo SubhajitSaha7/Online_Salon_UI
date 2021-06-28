@@ -1,0 +1,25 @@
+<section class="col-4 mx-auto card card-primary m-1 p-1" id="addpayment">
+  <div *ngIf="msg!=undefined" class="alert alert-success" [ngStyle]="{'background-color': this.msgflag?'green':'red','color':'yellow'}">{{msg}}</div>
+  <form #frm="ngForm" (ngSubmit)="add()">
+
+    
+    <div>Payment Type</div>
+    <div><input type="text" class="form-control" name="txtname" [(ngModel)]="pmtdto.type" #ptype="ngModel" required/></div>
+    <div *ngIf="ptype.invalid && ptype.touched" class="alert alert-danger">Payment Type is required</div>
+     
+
+    
+    <div>Appointment Id</div>
+    <div><input type="number" class="form-control" name="txtapt" [(ngModel)]="pmtdto.appointmentId" #aid="ngModel" required/></div>
+    <div *ngIf="aid.invalid && aid.touched" class="alert alert-danger">Appointment Id is required</div>
+  
+      
+      <div>Cvv No</div>
+      <div><input type="text" class="form-control" name="txtcard" [(ngModel)]="pmtdto.cvvNo" #cnumber="ngModel" required/></div>
+      <div *ngIf="cnumber.invalid && cnumber.touched" class="alert alert-danger">
+        <div *ngIf="cnumber.errors.required">CVV Number is required</div>
+      </div>
+    <input type="submit" value="addbankacc" [disabled]="!frm.valid"/>
+
+  </form>
+</section>

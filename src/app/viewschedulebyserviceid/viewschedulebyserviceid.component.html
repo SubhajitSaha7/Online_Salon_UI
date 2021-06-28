@@ -1,0 +1,27 @@
+<div class="col-7 mx-auto mt-2">
+  <input type="number" placeholder="Enter salon service ID" [(ngModel)]="serviceId" class="form-control"/>
+  <input type="button" value="Search" (click)="viewbyserviceid()" class="btn btn-info m-2"/>
+</div>  
+<section>
+  <div *ngIf="msg!=undefined" class="alert alert-danger">{{msg}}</div>
+  <table class="table table-primary table-striped table-hover col-md-12">
+    <tr>
+      <th>Service Schedule ID</th>
+      <th>No. of appointments</th>
+      <th>Schedule Date</th>
+      <th>Slot</th>
+      <th>Salon Service ID</th>
+      <th>Service Name</th>
+      <th>Service Price</th>
+    </tr>
+    <tr *ngFor="let ss of serviceschedule">
+      <td>{{ss.serviceScheduleId}}</td>
+      <td>{{ss.noofappointments | number}}</td>
+      <td>{{ss.scheduleDate | date:'dd/MMM/yyyy' }}</td>
+      <td>{{ss.slot | titlecase}}</td>
+      <td>{{ss.salonService.serviceId | number}}</td>
+      <td>{{ss.salonService.serviceName | titlecase}}</td>
+      <td>{{ss.salonService.servicePrice | number}}</td>
+    </tr>
+  </table>
+</section>

@@ -1,7 +1,7 @@
 export class Appointmentdto {
-    appointmentId:number;
+    //appointmentId:number;
     preferredDate:string;
+    //appointmentStatus:string;
     custId:number;
     scheduleId:number;
-    appointmentStatus:string;
 }

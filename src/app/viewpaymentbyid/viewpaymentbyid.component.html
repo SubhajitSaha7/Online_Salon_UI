@@ -1,0 +1,46 @@
+<div class="col-5 mx-auto p-2 m-2">
+  <input type="number" placeholder="Enter Payment Id" [(ngModel)]="id" class="form-control"/>
+  <input type="button" value="Search" (click)="viewbyid()" class="btn btn-info"/>
+</div>
+<section>
+  <div *ngIf="msg!=undefined" class="alert alert-danger">{{msg}}</div>
+  <table class="table table-primary table-striped table-hover" *ngIf="pmt!=undefined">
+    <tr>
+      <td>Payment Type</td>
+      <td>{{pmt.type}}</td>
+    </tr>
+    <tr>
+      <td>Payment Status</td>
+      <td>{{pmt.status | uppercase}}</td>
+    </tr>
+    <tr>
+      <td>Appointment Id</td>
+      <td>{{pmt.appointment.appointmentId}}</td>
+    </tr>
+    <tr>
+      <td>Customer Id</td>
+      <td>{{pmt.appointment.customer.userId}}</td>
+    </tr>
+     <tr>
+      <td>Customer Name</td>
+      <td>{{pmt.appointment.customer.name | titlecase}}</td>
+    </tr>
+    <tr>
+      <td>Customer Contact No</td>
+      <td>{{pmt.appointment.customer.contactNo}}</td>
+    </tr>
+    <tr>
+      <td>Service Name</td>
+      <td>{{pmt.appointment.salonServiceSchedule.salonService.serviceName|uppercase }}</td>
+    </tr>
+    <tr>
+      <td>Service Price </td>
+      <td>{{pmt.appointment.salonServiceSchedule.salonService.servicePrice|currency:'INR' }}</td>
+    </tr>
+    <tr>
+      <td>Appointment Date</td>
+      <td>{{pmt.appointment.preferredDate|date:'dd/MMM/yyyy'}}</td>
+    </tr> 
+
+  </table>
+</section>

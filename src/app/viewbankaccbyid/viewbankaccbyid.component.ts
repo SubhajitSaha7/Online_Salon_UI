@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BankserviceService } from '../bankservice.service';
+import { BankService } from '../bank.service';
 
 @Component({
   selector: 'app-viewbankaccbyid',
@@ -11,7 +11,7 @@ export class ViewbankaccbyidComponent implements OnInit {
   msg:string;
   bankacc:any;
 
-  constructor(public bankservice:BankserviceService) { }
+  constructor(public bankservice:BankService) { }
 
   ngOnInit() {
   }

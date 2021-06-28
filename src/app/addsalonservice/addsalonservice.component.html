@@ -1,0 +1,40 @@
+<section class="col-4 mx-auto card card-primary m-1 p-1" id="addid">
+  <div class="alert" *ngIf="msg!=undefined" [ngStyle]="{'background-color':this.msgflag?'green':'red','color':'yellow'}">{{msg}}</div>
+  <form #frm = 'ngForm' (ngSubmit)="add()">
+    
+
+    <div>Salon Service Name</div>
+    <div><input type="text" class="form-control" name="txtservicename" [(ngModel)]='service.serviceName' #servicename='ngModel' required="([a-zA-Z]+)|([a-zA-Z]+[\\\\s][a-zA-Z]+)" /></div>
+    <div *ngIf="servicename.invalid && servicename.touched" class="alert alert-danger">
+      <div *ngIf="servicename.errors.required" >Salon service name is required</div>
+      
+    </div>
+
+    <div>Salon Service Price</div>
+    <div><input type="number" class="form-control" name="txtserviceprice" [(ngModel)]='service.servicePrice' #serviceprice='ngModel' required /></div>
+    <div *ngIf="serviceprice.invalid && serviceprice.touched" class="alert alert-danger">Salon service price is mandatory</div>
+
+    <div>Salon Service Duration</div>
+    <div><input type="text" class="form-control" name="txtserviceduration" [(ngModel)]='service.serviceDuration' #serviceduration='ngModel' required /></div>
+    <div *ngIf="serviceduration.invalid && serviceduration.touched" class="alert alert-danger">Salon service duration is mandatory</div>
+
+    <div>Salon Service Discount</div>
+    <div><input type="number" class="form-control" name="txtservicediscount" [(ngModel)]='service.discount' #servicediscount='ngModel' /></div>
+
+    <div>Salon Address</div>
+    <div><input type="text" class="form-control" name="txtsalonaddress" [(ngModel)]='service.salonAddress' #serviceaddress='ngModel' required /></div>
+    <div *ngIf="serviceaddress.invalid && serviceaddress.touched" class="alert alert-danger">Salon Address is mandatory</div>
+
+    <div>Salon Location</div>
+    <div><input type="text" class="form-control" name="txtsalonlocation" [(ngModel)]='service.salonLocation' #servicelocation='ngModel' required /></div>
+    <div *ngIf="servicelocation.invalid && servicelocation.touched" class="alert alert-danger">Salon Location is mandatory</div>
+
+    <div>Salon Center Name</div>
+    <div><input type="text" class="form-control" name="txtsaloncenter" [(ngModel)]='service.salonCentreName' #servicecenter='ngModel' required /></div>
+    <div *ngIf="servicecenter.invalid && servicecenter.touched" class="alert alert-danger">Salon Center Name is mandatory</div>
+
+    <input type="submit" value="addSalonService" [disabled]="!frm.valid"/>
+  </form>
+</section>
+
+

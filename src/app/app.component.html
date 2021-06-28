@@ -1,16 +1,23 @@
 <header class="p-1 bg-info">
-  <h1 class="text-center">Salon Management</h1>
-  <!-- <div class="col-10 text-end" *ngIf="!storageservice.loginflag"><a routerLink="/login" class="text-white">Login</a></div>
+  <h1 class="text-center">Online Salon Management</h1>
+  <div class="col-10 text-end" *ngIf="!storageservice.loginflag"><a routerLink="/login" style="cursor:pointer">Login</a></div>
   <div class="col-10 text-end" *ngIf="storageservice.loginflag">
-      <span class="text-primary">Hi {{storageservice.username|titlecase}} </span>
-      <a (click)="doLogout()" class="btn-link text-white" style="cursor:pointer">Logout</a>
-    </div> -->
+  <span class="text-primary">Hi {{storageservice.username|titlecase}} </span>
+  <a (click)="doLogout()" class="btn-link" style="cursor:pointer">Logout</a></div>
 </header>
-
 <article>
   <nav class="col-6 bg-dark p-2 m-2 mx-auto">
-    <a routerLink='viewbankacc' class="m-2 text-white">View Bank Account</a>
+    <a routerLink="addsalonservice" class="m-2 text-white">Add Salon Service</a>
+    <a routerLink='addappointment' class="m-2 text-white">Add Appointment</a>
     <a routerLink='addbankacc' class="m-2 text-white">Add Bank Account</a>
+    <a routerLink='addpayment' class="m-2 text-white">Add Payment</a>
+    <a routerLink='addserviceschedule' class="m-2 text-white">Add Salon Service Schedule</a>
+    <a routerLink="viewsalonservice" class="m-2 text-white">View Salon Service</a>
+    <a routerLink='viewappointment' class="m-2 text-white">View Appointment</a>
+    <a routerLink='viewbankacc' class="m-2 text-white">View Bank Account</a>
+    <a routerLink='viewpayment' class="m-2 text-white">View Payment Details</a>
+    <a routerLink='viewserviceschedule' class="m-2 text-white">View Salon Service Schedule</a>
+    <a routerLink='viewcustomer' class="m-2 text-white">View Customer</a>
     </nav>
   <router-outlet></router-outlet>
 </article>

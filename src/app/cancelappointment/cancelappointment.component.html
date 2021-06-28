@@ -1,0 +1,16 @@
+<section class="col-4 mx-auto card card-primary m-1 p-1">
+  <h2 class="text-center">Edit Appointment</h2>
+  <div class="alert alert-danger" *ngIf="msg != undefined">{{msg}}</div>
+  <form #frm = 'ngForm' (ngSubmit)="cancel()">
+    <div>Appointment ID</div>
+    <div><input type="number" class="form-control" name="appointmentid" [(ngModel)]='appointment.appointmentId' readonly/></div>
+
+    
+    <!--<div>Salon Centre Name</div>
+      <div><input type="text" class="form-control" name="saloncentrename" [(ngModel)]='salondto.salonCentreName' required #mlcentre='ngModel' /></div>
+      <div *ngIf="mlcentre.invalid && mlcentre.touched" class="alert alert-danger">Salon Centre Name is required</div>
+    -->           
+      <div class="mt-2 text-center"><input type="submit" value="Cancel Appointment" [disabled]="!frm.valid" class="btn btn-danger"/></div>
+                          
+  </form>
+</section>

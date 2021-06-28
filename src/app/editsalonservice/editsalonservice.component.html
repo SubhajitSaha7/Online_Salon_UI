@@ -1,0 +1,48 @@
+<section class="col-4 mx-auto card card-primary m-1 p-1">
+  <h2 class="text-center">Edit Salon Service</h2>
+  <!--<div class="alert alert-success" *ngIf="msg!=undefined">{{msg}}</div>-->
+  <div class="alert alert-danger" *ngIf="errorMsg != undefined">{{errorMsg}}
+    <!--<div *ngFor = "let e of errors">{{e}}</div>-->
+  </div>
+
+  <form #frm = 'ngForm' (ngSubmit)="editEmp()">
+    <div>Salon Service ID</div>
+    <div><input type="number" class="form-control" name="sid" [(ngModel)]='salondto.serviceId' readonly/></div>
+
+    <div>Salon Service Name</div>
+    <div><select [(ngModel)]="salondto.serviceName" name="servicename" #mlservicename="ngModel" class="form-control">
+                <option value="">----select salon services----</option>
+                <option *ngFor="let s of services" value="{{s.serviceName}}">{{s.serviceName}}</option>
+    </select></div>
+    <div *ngIf="mlservicename.invalid && mlservicename.touched" class="alert alert-danger">Salon Service is required</div>
+
+    <div>Service Price </div>
+    <div><input type="number" class="form-control" name="serviceprice" [(ngModel)]='salondto.servicePrice' required #mlprice='ngModel' /></div>
+    <div *ngIf="mlprice.invalid && mlprice.touched" class="alert alert-danger">Salon Service Price is required</div>
+
+    <div>Service Duration</div>
+    <div><input type="text" class="form-control" name="serviceduration" [(ngModel)]='salondto.serviceDuration' required #mlduration='ngModel' /></div>
+    <div *ngIf="mlduration.invalid && mlduration.touched" class="alert alert-danger">Service Duration is required</div>
+
+    <div>Service Discount</div>
+    <div><input type="number" class="form-control" name="servicediscount" [(ngModel)]='salondto.discount' /></div>
+
+    <div>Salon Address</div>
+    <div><input type="text" class="form-control" name="salonaddress" [(ngModel)]='salondto.salonAddress' required #mladdress='ngModel' /></div>
+    <div *ngIf="mladdress.invalid && mladdress.touched" class="alert alert-danger">Salon Address is required</div>
+
+    <div>Salon Location</div>
+    <div><input type="text" class="form-control" name="salonlocation" [(ngModel)]='salondto.salonLocation' required #mllocation='ngModel' /></div>
+    <div *ngIf="mllocation.invalid && mllocation.touched" class="alert alert-danger">Salon Location is required</div>
+
+    <div>Salon Centre Name</div>
+    <div><input type="text" class="form-control" name="saloncentrename" [(ngModel)]='salondto.salonCentreName' required #mlcentre='ngModel' /></div>
+    <div *ngIf="mlcentre.invalid && mlcentre.touched" class="alert alert-danger">Salon Centre Name is required</div>
+
+    <div class="mt-2 text-center"><input type="submit" value="Edit Salon Service" [disabled]="!frm.valid" class="btn btn-danger"/></div>
+        
+  </form>
+</section>
+
+
+

@@ -1,0 +1,42 @@
+<section class="col-4 mx-auto card card-primary m-1 p-1" id="addid">
+  <div *ngIf="msg!=undefined" class="alert alert-success" [ngStyle]="{'background-color': this.msgflag?'green':'red','color':'yellow'}">{{msg}}</div>
+  <form #frm="ngForm" (ngSubmit)="add()">
+
+    <div>No. of appointments</div>
+    <div><input type="number" class="form-control" name="txtnoofappointments" [(ngModel)]="ssdto.noofappointments" #ssnofappointments="ngModel" required ></div>
+    <div *ngIf="ssnofappointments.invalid && ssnofappointments.touched" class="alert alert-danger">
+      <div *ngIf="ssnofappointments.errors.required">Enter appointments 0 or above</div>
+    </div>
+
+    <div>Schedule Date</div>
+    <div><input type="date" class="form-control" name="txtdate" [(ngModel)]="ssdto.scheduleDate" #ssdate="ngModel" required></div>
+    <div *ngIf="ssdate.invalid && ssdate.touched" class="alert alert-danger">Schedule date required</div>
+    
+    <div>Schedule Slot</div>
+    <div><input type="text" class="form-control" name="txtslot" [(ngModel)]="ssdto.slot" #ssslot="ngModel" required ></div>
+    <div *ngIf="ssslot.invalid && ssslot.touched" class="alert alert-danger">
+      <div *ngIf="ssslot.errors.required">Slot is required(like "1pm to 2pm")</div>
+    </div>
+
+    <div>Service Id</div>
+    <div><input type="number" class="form-control" name="txtserviceid" [(ngModel)]="ssdto.salonServiceId" #ssserviceid="ngModel" required ></div>
+    <div *ngIf="ssserviceid.invalid && ssserviceid.touched" class="alert alert-danger">
+      <div *ngIf="ssserviceid.errors.required">Service Id is required(greater than 0)</div>
+    </div>
+    <!--
+    <div>Employee Salary</div>
+    <div><input type="number" class="form-control" name="txtsal" [(ngModel)]="emp.empSal" #esal="ngModel" required></div>
+    <div *ngIf="esal.invalid && esal.touched" class="alert alert-danger">Salary is mandatory</div>
+    -->
+
+    <!--<div>Schedule Status</div>
+    <div><input type="text" class="form-control" name="txtstatus" [(ngModel)]="ssdto.scheduleStatus" #ssstatus="ngModel" required pattern="available|cancelled"></div>
+    <div *ngIf="ssstatus.invalid && ssstatus.touched" class="alert alert-danger">
+      <div *ngIf="ssstatus.errors.required">Schedule status is required</div>
+      <div *ngIf="ssstatus.errors.pattern">Status can be either available or cancelled</div>
+    </div>-->
+
+    <input class="m-2" type="submit" value="Add Schedule" [disabled]="!frm.valid"/>
+
+  </form>
+</section>
