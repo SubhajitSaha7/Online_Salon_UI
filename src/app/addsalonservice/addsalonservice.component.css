@@ -8,3 +8,8 @@ form {
     background-color: rgb(150, 145, 223);
     padding: 20px;
 }
+.fields{
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    text-transform: capitalize;
+}

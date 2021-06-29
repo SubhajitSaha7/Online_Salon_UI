@@ -13,7 +13,7 @@
     <div><input type="password" name="txtpwd" [(ngModel)]="login.password" #loginpwd="ngModel" required class="form-control"/></div>
     <div class="alert alert-danger" *ngIf="loginpwd.invalid && loginpwd.touched">Password is required</div>
 
-    <div><input type="submit" value="login" [disabled]="!frm.valid"></div>
+    <div><input type="submit" value="Login" [disabled]="!frm.valid"></div>
  </form>
 </section>
  

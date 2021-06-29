@@ -17,7 +17,7 @@
       <th>Salon Address</th>
       <th>Salon Location</th>
       <th>Salon Centre Name</th>
-      <th>Edit</th>
+      <th *ngIf="storageservice.role=='admin'">Edit</th>
     </tr>
 
     <tr *ngFor="let s of salonservices">
@@ -29,7 +29,10 @@
       <td>{{s.salonAddress | titlecase}}</td>
       <td>{{s.salonLocation | titlecase}}</td>
       <td>{{s.salonCentreName | titlecase}}</td>
-      <td><a class="btn btn-warning text-white" routerLink="/editsalonservice/{{s.serviceId}}">Edit</a></td>
+      <td *ngIf="storageservice.role=='admin'"><a class="btn btn-warning text-white" routerLink="/editsalonservice/{{s.serviceId}}">Edit</a></td>
     </tr>
   </table>
+</section>
+<section>
+  <!-- <img src="./assets/images/bg.jpg"/> -->
 </section>

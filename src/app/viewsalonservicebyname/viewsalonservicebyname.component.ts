@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SalonserviceService } from '../salonservice.service';
+import { StorageService } from '../storage.service';
 
 @Component({
   selector: 'app-viewsalonservicebyname',
@@ -12,7 +13,7 @@ export class ViewsalonservicebynameComponent implements OnInit {
   sname:string;
   salonservices:any;
   msg:string;
-  constructor(public salonservice:SalonserviceService) { }
+  constructor(public salonservice:SalonserviceService, public storageservice:StorageService) { }
 
   ngOnInit() {
     this.salonservice.viewallsalonservice().subscribe(data=>{

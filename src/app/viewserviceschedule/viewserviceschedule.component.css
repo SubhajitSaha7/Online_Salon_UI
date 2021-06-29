@@ -1,20 +1,14 @@
-/* @media only screen and (max-width:600px){
-    table{
-        width: 80%;
-    }
-    th{
-        display: none;
-    }
-    td{
-        display: block;
-    }
+#child a{
+  text-decoration: none;
+  height: 40px;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 10px;
+  background: -webkit-linear-gradient(left, #42bbf3, lightblue);
 }
-.btn-primary{
-    background-color: rgb(184, 0, 0);
-    border-color: yellow;
-} */
-
-/* Dropdown Button */
+#child a:hover{
+  color: blue;
+}
 .dropbtn {
     background-color: #04AA6D;
     color: white;
@@ -55,3 +49,20 @@
   
   /* Change the background color of the dropdown button when the dropdown content is shown */
   .dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+  @media only screen and (max-width:600px){
+    #child a{
+        display: block;
+    }
+    #child {
+      width: 80%;
+    }
+  }
+
+    #heading{
+      color: rgb(0, 0, 0);
+      text-shadow: 2px 2px 2px rgb(129, 129, 129);
+      font-size: 30px;
+      font-family: cursive;
+      text-transform: capitalize;
+  }
