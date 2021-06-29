@@ -1,10 +1,13 @@
-<article>
-  <h2 class="mx-auto text-center">View Salon Service</h2>
-  <nav class="col-3 bg-dark p-2 m-2 mx-auto" *ngIf="storageservice.loginflag && storageservice.role=='admin'">
-      <a routerLink="/viewsalonservice/byid" class="m-2 text-white">ViewServiceById</a>
-      <a routerLink="/viewsalonservice/byname" class="m-2 text-white">ViewSalonServiceByName</a>
+<article class="m-4 mx-auto">
+  <h2 class="mx-auto text-center" id="heading">View Salon Service</h2>
+  <nav class="col-5 p-2 mx-auto" *ngIf="storageservice.loginflag && storageservice.role=='admin'" id="child">
+      <a routerLink="/viewsalonservice/byid" class="m-2 text-white">View By Service Id</a>
+      <a routerLink="/viewsalonservice/byname" class="m-2 text-white">View By Salon Service Name</a>
   </nav>
-  <section class="col-6 p-2 m-2 mt-10" style="margin-top: 10px;">
+  <section class="col-6 p-2 mx-auto" style="margin-top: 100px">
     <router-outlet></router-outlet>
   </section>
 </article>
+
+
+

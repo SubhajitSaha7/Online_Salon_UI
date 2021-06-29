@@ -5,6 +5,11 @@
 }
 form {
     border-radius: 5px;
-    background-color: rgb(150, 145, 223);
+    background-color: #1e7eb6;
     padding: 20px;
+}
+.fields{
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    text-transform: capitalize;
 }
