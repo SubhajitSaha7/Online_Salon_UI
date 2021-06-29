@@ -6,18 +6,19 @@
   <a (click)="doLogout()" class="btn-link" style="cursor:pointer">Logout</a></div>
 </header>
 <article>
-  <nav class="col-6 bg-dark p-2 m-2 mx-auto">
-    <a routerLink="addsalonservice" class="m-2 text-white">Add Salon Service</a>
-    <a routerLink='addappointment' class="m-2 text-white">Add Appointment</a>
-    <a routerLink='addbankacc' class="m-2 text-white">Add Bank Account</a>
-    <a routerLink='addpayment' class="m-2 text-white">Add Payment</a>
-    <a routerLink='addserviceschedule' class="m-2 text-white">Add Salon Service Schedule</a>
+  <nav class="col-6 bg-dark p-2 m-2 mx-auto" *ngIf="storageservice.loginflag">
+    <a routerLink="addsalonservice" class="m-2 text-white" *ngIf="storageservice.role=='admin'">Add Salon Service</a>
+    <a routerLink='addappointment' class="m-2 text-white" *ngIf="storageservice.role=='user'">Book Appointment</a>
+    <a routerLink='addbankacc' class="m-2 text-white" *ngIf="storageservice.role=='user'">Add Bank Account</a>
+    <a routerLink='addpayment' class="m-2 text-white" *ngIf="storageservice.role=='user'">Make Payment</a>
+    <a routerLink='addserviceschedule' class="m-2 text-white" *ngIf="storageservice.role=='admin'">Add Salon Service Schedule</a>
     <a routerLink="viewsalonservice" class="m-2 text-white">View Salon Service</a>
-    <a routerLink='viewappointment' class="m-2 text-white">View Appointment</a>
-    <a routerLink='viewbankacc' class="m-2 text-white">View Bank Account</a>
-    <a routerLink='viewpayment' class="m-2 text-white">View Payment Details</a>
+    <a routerLink='viewappointment' class="m-2 text-white" *ngIf="storageservice.role=='admin'">View Appointment</a>
+    <a routerLink='viewbankacc' class="m-2 text-white" *ngIf="storageservice.role=='admin'">View Bank Account</a>
+    <a routerLink='viewpayment' class="m-2 text-white" *ngIf="storageservice.role=='admin'">View Payment Details</a>
     <a routerLink='viewserviceschedule' class="m-2 text-white">View Salon Service Schedule</a>
-    <a routerLink='viewcustomer' class="m-2 text-white">View Customer</a>
+    <a routerLink='viewcustomer' class="m-2 text-white" *ngIf="storageservice.role=='admin'">View Customer</a>
+    <a routerLink='viewuser' class="m-2 text-white" *ngIf="storageservice.role=='user'">View User Info</a>
     </nav>
   <router-outlet></router-outlet>
 </article>

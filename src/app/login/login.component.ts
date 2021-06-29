@@ -34,6 +34,7 @@ export class LoginComponent implements OnInit {
       this.storageservice.loginflag=true;
       this.storageservice.username=JSON.parse(localStorage.getItem("userinfo")).userName;
       this.storageservice.msg=undefined;
+      this.storageservice.role=JSON.parse(localStorage.getItem("userinfo")).role;
       this.router.navigateByUrl("/");},
       error=>{this.storageservice.msg="Incorrect Username and Password";
       this.storageservice.loginflag=false;

@@ -18,6 +18,7 @@ import { ViewbyscheduleidComponent } from './viewappointmentbyscheduleid/viewbys
 import { ViewbankaccbyidComponent } from './viewbankaccbyid/viewbankaccbyid.component';
 import { ViewcustomerComponent } from './viewcustomer/viewcustomer.component';
 import { ViewcustomerbyidComponent } from './viewcustomerbyid/viewcustomerbyid.component';
+import { ViewcustomerbynameComponent } from './viewcustomerbyname/viewcustomerbyname.component';
 import { ViewpaymentComponent } from './viewpayment/viewpayment.component';
 import { ViewpaymentbyidComponent } from './viewpaymentbyid/viewpaymentbyid.component';
 import { ViewsalonserviceComponent } from './viewsalonservice/viewsalonservice.component';
@@ -26,6 +27,7 @@ import { ViewsalonservicebynameComponent } from './viewsalonservicebyname/viewsa
 import { ViewschedulebyserviceidComponent } from './viewschedulebyserviceid/viewschedulebyserviceid.component';
 import { ViewservicescheduleComponent } from './viewserviceschedule/viewserviceschedule.component';
 import { ViewserviceschedulebyidComponent } from './viewserviceschedulebyid/viewserviceschedulebyid.component';
+import { ViewuserinfoComponent } from './viewuserinfo/viewuserinfo.component';
 
 const routes: Routes = [{path: 'addappointment', component: AddappointmentComponent,canActivate:[CgGuard]},
                         {path: 'viewappointment', component: ViewappointmentComponent,canActivate:[CgGuard],
@@ -53,9 +55,15 @@ const routes: Routes = [{path: 'addappointment', component: AddappointmentCompon
                                       {path:'viewall', component:ViewallscheduleComponent}]
                         },
                         {path: 'viewcustomer', component:ViewcustomerComponent,
-                          children:[{path:'bycustid', component: ViewcustomerbyidComponent}]
+                          children:[{path:'bycustid', component: ViewcustomerbyidComponent},
+                                    {path: 'byname', component: ViewcustomerbynameComponent}]
                         },
-                        {path:'login',component:LoginComponent}
+                        {path:'login',component:LoginComponent},
+                        {path:'viewuser', component: ViewuserinfoComponent,
+                          children:[{path:'bycustid', component:ViewcustomerbyidComponent},
+                                    {path:'bypaymentid', component: ViewpaymentbyidComponent},
+                                    {path: 'appointments', component: ViewbycustomeridComponent}]
+                        }
                       ];
 
 @NgModule({

@@ -15,6 +15,10 @@ export class CustomerService {
     return this.http.get("http://localhost:8082/salonapp/viewcustomerbyid/"+userId);
   }
 
+  viewbycustomername(name:string):Observable<any>{
+    return this.http.get("http://localhost:8082/salonapp/viewcustomerbyname/"+name);
+  }
+
   public doLogin(login:Logindto):Observable<any>{
     return this.http.post("http://localhost:8082/salonapp/login",login);
   }

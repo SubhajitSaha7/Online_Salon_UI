@@ -29,6 +29,8 @@ import { ViewschedulebyserviceidComponent } from './viewschedulebyserviceid/view
 import { LoginComponent } from './login/login.component';
 import { ViewcustomerbyidComponent } from './viewcustomerbyid/viewcustomerbyid.component';
 import { ViewcustomerComponent } from './viewcustomer/viewcustomer.component';
+import { ViewcustomerbynameComponent } from './viewcustomerbyname/viewcustomerbyname.component';
+import { ViewuserinfoComponent } from './viewuserinfo/viewuserinfo.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +61,9 @@ import { ViewcustomerComponent } from './viewcustomer/viewcustomer.component';
     ViewallscheduleComponent,
     LoginComponent,
     ViewcustomerbyidComponent,
-    ViewcustomerComponent
+    ViewcustomerComponent,
+    ViewcustomerbynameComponent,
+    ViewuserinfoComponent
   ],
   imports: [
     BrowserModule,

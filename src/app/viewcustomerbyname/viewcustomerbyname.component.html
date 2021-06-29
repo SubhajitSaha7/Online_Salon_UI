@@ -1,0 +1,38 @@
+<div class="col-6 mx-auto p-2 m-2" *ngIf="storageservice.role=='admin'">
+  <input type="text" placeholder="Enter Customer name" [(ngModel)]="name" class="form-control"/>
+  <input type="button" value="Search" (click)="viewbycustomername()" class="btn btn-info"/>
+</div>
+<section>
+  <div *ngIf="msg!=undefined" class="alert alert-danger">{{msg}}</div>
+  <table class="table table-primary table-striped" *ngIf="customers!=undefined">
+    <tr>
+      <th>User Id</th>
+      <th>Customer Name</th>
+      <th>Customer Email</th>
+      <th>Customer Contact No</th>
+      <th>Date of Birth</th>
+      <th>Door No</th>
+      <th>Street</th>
+      <th>Area</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Pincode</th>
+    </tr>
+
+    <tr *ngFor="let c of customers">
+      <td>{{c.userId}}</td>
+      <td>{{c.name | titlecase}}</td>
+      <td>{{c.email}}</td>
+      <td>{{c.contactNo}}</td>
+      <td>{{c.dob}}</td>
+      <td>{{c.doorNo}}</td>
+      <td>{{c.street}}</td>
+      <td>{{c.area}}</td>
+      <td>{{c.city}}</td>
+      <td>{{c.state}}</td>
+      <td>{{c.pincode}}</td>
+    </tr>
+  </table>
+</section>
+
+
