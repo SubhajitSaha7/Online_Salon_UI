@@ -1,10 +1,21 @@
-<article class="row col-10 mx-auto" [ngStyle]="{height:'400px'}">
+<!-- <article class="row col-10 mx-auto" [ngStyle]="{height:'400px'}">
   <section class="col-3 bg-info p-2 m-2">
     <div><input type="button" class="btn btn-warning m-2 w-50" value="View By Payment Id" routerLink="/viewpayment/byid"/></div>
     <div><input type="button" class="btn btn-warning m-2 w-50" value="View All Payment" routerLink="/viewpayment/viewall"/></div>
   </section>
   <section class="col-6 p-2 m-2">
     <h2>View Payment</h2>
+    <router-outlet></router-outlet>
+  </section>
+</article> -->
+
+<article>
+  <h2 class="mx-auto text-center">Payment Details</h2>
+  <nav class="col-5 bg-dark p-2 m-2 mx-auto" *ngIf="storageservice.loginflag">
+      <a routerLink="/viewpayment/byid" class="m-2 text-white" *ngIf="storageservice.role=='admin'">ViewPaymentById</a>
+      <a routerLink="/viewpayment/viewall" class="m-2 text-white" *ngIf="storageservice.role=='admin'">ViewAllPayment</a>
+  </nav>
+  <section class="col-6 p-2 m-2 mx-auto">
     <router-outlet></router-outlet>
   </section>
 </article>

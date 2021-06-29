@@ -36,7 +36,7 @@
     <a routerLink='addpayment' class="m-2 text-white" *ngIf="storageservice.role=='user'">Make Payment</a>
     <a routerLink='viewpayment' class="m-2 text-white" *ngIf="storageservice.role=='admin'">View Payment Details</a>
     <a routerLink='addbankacc' class="m-2 text-white" *ngIf="storageservice.role=='user'">Add Bank Account</a>
-    <a routerLink='viewbankacc' class="m-2 text-white" *ngIf="storageservice.role=='admin'">View Bank Account</a>
+    <a routerLink='/viewbankacc/byid' class="m-2 text-white" *ngIf="storageservice.role=='admin'">View Bank Account</a>
   </div>
 </div>
 

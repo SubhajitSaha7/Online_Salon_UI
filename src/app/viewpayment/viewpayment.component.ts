@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StorageService } from '../storage.service';
 
 @Component({
   selector: 'app-viewpayment',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewpaymentComponent implements OnInit {
 
-  constructor() { }
+  constructor(public storageservice:StorageService) { }
 
   ngOnInit() {
   }

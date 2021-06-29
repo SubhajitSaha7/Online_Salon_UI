@@ -9,3 +9,16 @@
     <router-outlet></router-outlet>
   </section>
 </article> -->
+<article>
+  <h2 class="mx-auto text-center">Service Schedule</h2>
+  <nav class="col-5 bg-dark p-2 m-2 mx-auto" *ngIf="storageservice.loginflag">
+      <a routerLink="/viewserviceschedule/byid" class="m-2 text-white" *ngIf="storageservice.role=='admin'">ViewScheduleById</a>
+      <a routerLink="/viewserviceschedule/byserviceid" class="m-2 text-white" *ngIf="storageservice.role=='admin'">ViewScheduleByServiceId</a>
+      <a routerLink="/viewserviceschedule/viewall" class="m-2 text-white" *ngIf="storageservice.role=='admin'">ViewAllSchedule</a>
+  </nav>
+  <section class="col-6 p-2 m-2 mx-auto">
+    <router-outlet></router-outlet>
+  </section>
+</article>
+
+

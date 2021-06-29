@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StorageService } from '../storage.service';
 
 @Component({
   selector: 'app-bank',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BankComponent implements OnInit {
 
-  constructor() { }
+  constructor(public storageservice:StorageService) { }
 
   ngOnInit() {
   }
