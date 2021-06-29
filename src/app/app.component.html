@@ -5,7 +5,55 @@
   <span class="text-primary">Hi {{storageservice.username|titlecase}} </span>
   <a (click)="doLogout()" class="btn-link" style="cursor:pointer">Logout</a></div>
 </header>
-<article>
+<article class="text-center mx-auto">
+<div class="dropdown">
+  <button class="dropbtn m-2 text-white">Salon Service</button>
+  <div class="dropdown-content">
+    <a routerLink="addsalonservice" class="m-2 text-white" *ngIf="storageservice.role=='admin'">Add Salon Service</a>
+    <a routerLink="viewsalonservice" class="m-2 text-white">View Salon Service</a>
+  </div>
+</div>
+
+<div class="dropdown">
+  <button class="dropbtn m-2 text-white">Appointment</button>
+  <div class="dropdown-content">
+    <a routerLink='addappointment' class="m-2 text-white" *ngIf="storageservice.role=='user'">Book Appointment</a>
+    <a routerLink='viewappointment' class="m-2 text-white" *ngIf="storageservice.role=='admin'">View Appointment</a>
+  </div>
+</div>
+
+<div class="dropdown">
+  <button class="dropbtn m-2 text-white">Schedule</button>
+  <div class="dropdown-content">
+    <a routerLink='addserviceschedule' class="m-2 text-white" *ngIf="storageservice.role=='admin'">Add Salon Service Schedule</a>
+    <a routerLink='viewserviceschedule' class="m-2 text-white">View Salon Service Schedule</a>
+  </div>
+</div>
+
+<div class="dropdown">
+  <button class="dropbtn m-2 text-white">Payment Details</button>
+  <div class="dropdown-content">
+    <a routerLink='addpayment' class="m-2 text-white" *ngIf="storageservice.role=='user'">Make Payment</a>
+    <a routerLink='viewpayment' class="m-2 text-white" *ngIf="storageservice.role=='admin'">View Payment Details</a>
+    <a routerLink='addbankacc' class="m-2 text-white" *ngIf="storageservice.role=='user'">Add Bank Account</a>
+    <a routerLink='viewbankacc' class="m-2 text-white" *ngIf="storageservice.role=='admin'">View Bank Account</a>
+  </div>
+</div>
+
+<div class="dropdown">
+  <button class="dropbtn m-2 text-white" *ngIf="storageservice.role=='user'" routerLink='viewuser'>View User Info</button>
+</div>
+
+<div class="dropdown">
+  <button class="dropbtn m-2 text-white" *ngIf="storageservice.role=='admin'">Customer</button>
+  <div class="dropdown-content">
+    <a routerLink='viewcustomer' class="m-2 text-white" *ngIf="storageservice.role=='admin'">View Customer</a>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
+</article>
+<!-- <article>
   <nav class="col-6 bg-dark p-2 m-2 mx-auto" *ngIf="storageservice.loginflag">
     <a routerLink="addsalonservice" class="m-2 text-white" *ngIf="storageservice.role=='admin'">Add Salon Service</a>
     <a routerLink='addappointment' class="m-2 text-white" *ngIf="storageservice.role=='user'">Book Appointment</a>
@@ -21,4 +69,4 @@
     <a routerLink='viewuser' class="m-2 text-white" *ngIf="storageservice.role=='user'">View User Info</a>
     </nav>
   <router-outlet></router-outlet>
-</article>
+</article> -->

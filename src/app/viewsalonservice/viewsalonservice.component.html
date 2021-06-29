@@ -1,11 +1,11 @@
-<article class="row col-10 mx-auto" [ngStyle]="{height:'400px'}">
-  <section class="col-3 bg-info p-2 m-2">
-    <div><input type="button" class="btn btn-warning m-2 w-60" value="ViewServiceById" routerLink="/viewsalonservice/byid"/></div>
-    <div><input type="button" class="btn btn-warning m-2 w-60" value="ViewSalonServiceByName" routerLink="/viewsalonservice/byname"/></div>
-    
-  </section>
+<article>
+  <h2 class="mx-auto text-center">View Salon Service</h2>
+  <nav class="col-3 bg-dark p-2 m-2 mx-auto" *ngIf="storageservice.loginflag">
+      <a routerLink="/viewsalonservice/byid" class="m-2 text-white" *ngIf="storageservice.role=='admin'">ViewServiceById</a>
+      <a routerLink="/viewsalonservice/byname" class="m-2 text-white" *ngIf="storageservice.role=='admin'">ViewSalonServiceByName</a>
+  </nav>
   <section class="col-6 p-2 m-2 mx-auto">
-    <h2>View Salon Service</h2>
     <router-outlet></router-outlet>
   </section>
 </article>
+
