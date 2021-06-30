@@ -12,7 +12,7 @@ header{
   }
   
 .dropbtn {
-    background-color: #cedfff;
+    background:-webkit-linear-gradient(#cedfff,#56b5ec);
     color: white;
     padding: 12px;
     font-size: 16px;
@@ -61,9 +61,4 @@ header{
   .zoomin img:hover {
     width: 100px;
     height: 100px;
-  }
-
-  footer{
-    position: fixed;
-    margin-left: 650px;
   }
