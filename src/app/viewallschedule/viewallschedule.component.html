@@ -14,7 +14,7 @@
     <td>{{schedule.scheduleDate | date:'dd/MMM/yyyy'}}</td>
     <td>{{schedule.salonService.serviceId | number}}</td>
     <td>{{schedule.scheduleStatus | titlecase}}</td>
-    <td><a class="btn btn-danger text-white" (click)="deletebyid(schedule.serviceScheduleId)">Cancel</a></td>
+    <td><a class="btn btn-danger text-white" (click)="deletebyid(schedule.serviceScheduleId)" *ngIf="schedule.scheduleStatus!='Cancelled'">Cancel</a></td>
   </tr>
 </table>
 <section class="col-4 mx-auto">

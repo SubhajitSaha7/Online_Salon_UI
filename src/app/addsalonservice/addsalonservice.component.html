@@ -33,8 +33,6 @@
     <div><input type="text" class="form-control" name="txtsaloncenter" [(ngModel)]='service.salonCentreName' #servicecenter='ngModel' required /></div>
     <div *ngIf="servicecenter.invalid && servicecenter.touched" class="alert alert-danger">Salon Center Name is mandatory</div>
 
-    <input type="submit" value="Add Salon Service" [disabled]="!frm.valid"/>
+    <input class="p-2 m-2" type="submit" value="Add Salon Service" [disabled]="!frm.valid"/>
   </form>
 </section>
-
-

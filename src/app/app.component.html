@@ -5,8 +5,8 @@
   <span class="text-primary text-white">Hi {{storageservice.username|titlecase}} </span>
   <a (click)="doLogout()" class="btn-link" style="cursor:pointer">Logout</a></div>
 </header>
+<body>
 <article class="text-center mx-auto">
-
 <div class="dropdown">
   <button class="dropbtn zoomin m-2 text-white" routerLink="" title="Home"><img src="../assets/images/home-150499_1280.png" height="80" width="80"></button>
   
@@ -21,8 +21,11 @@
   </div>
 </div>
 
-<div class="dropdown">
-  <button class="dropbtn zoomin m-2 text-white" title="Book Now"><img src="../assets/images/booknow.jfif" height="80" width="80"></button>
+<div class="dropdown" *ngIf="storageservice.role=='user' || storageservice.role=='admin'">
+  <button class="dropbtn zoomin m-2 text-white" title="Book Now">
+    <img src="../assets/images/booknow.jfif" height="80" width="80" *ngIf="storageservice.role=='user'">
+    <img src="../assets/images/WhatsApp Image 2021-06-30 at 6.47.19 PM.jpeg" height="80" width="80"  *ngIf="storageservice.role=='admin'">
+  </button>
   <div class="dropdown-content">
     <a routerLink='addappointment' class="m-2 text-white" *ngIf="storageservice.role=='user'">Book Appointment</a>
     <a routerLink='viewappointment' class="m-2 text-white" *ngIf="storageservice.role=='admin'">View Appointment</a>
@@ -65,5 +68,9 @@
 
 <router-outlet></router-outlet>
 </article>
+</body>
 
-
+<footer align="center">
+  <hr style="height: 5px; background-color: rgb(68, 80, 133);"/>
+  <div>&copy;CopyRights Reserved 2021</div>
+</footer>

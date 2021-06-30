@@ -9,7 +9,7 @@ import { StorageService } from '../storage.service';
 })
 export class ViewcustomerbynameComponent implements OnInit {
 
-  customers:any=[];
+  customers:any=undefined;
   name:string;
   msg:string;
   constructor(public storageservice:StorageService, public customerservice:CustomerService) { }

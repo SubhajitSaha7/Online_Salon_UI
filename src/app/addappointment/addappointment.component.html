@@ -2,20 +2,20 @@
   <div *ngIf="msg!=undefined" class="alert alert-success" [ngStyle]="{'background-color': this.msgflag?'green':'red','color':'yellow'}">{{msg}}</div>
   <form #frm="ngForm" (ngSubmit)="add()">
 
-    <div>Preferred Date</div>
+    <div class="fields text-start">Preferred Date</div>
     <div><input type="date" class="form-control" name="txtdate" [(ngModel)]="appointment.preferredDate" #prefdate="ngModel" required></div>
     <div *ngIf="prefdate.invalid && prefdate.touched" class="alert alert-danger">Preferred Date is required</div>
 
-    <div>Customer Id</div>
+    <div class="fields text-start">Customer Id</div>
     <div><input type="number" class="form-control" name="txtcustid" [(ngModel)]="appointment.custId" #custid="ngModel" required></div>
     <div *ngIf="custid.invalid && custid.touched" class="alert alert-danger">Customer Id is required</div>
 
-    <div>Schedule Id</div>
+    <div class="fields text-start">Schedule Id</div>
     <div><input type="number" class="form-control" name="txtscheduleid" [(ngModel)]="appointment.scheduleId" #schedid="ngModel" required></div>
     <div *ngIf="schedid.invalid && schedid.touched" class="alert alert-danger">Schedule Id is required</div>
 
     
-    <input type="submit" value="Book Appointment" [disabled]="!frm.valid"/>
+    <input class="p-2 m-2" type="submit" value="Book" [disabled]="!frm.valid"/>
 
   </form>
 </section>
