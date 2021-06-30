@@ -1,19 +1,8 @@
-<!-- <article class="row col-10 mx-auto" [ngStyle]="{height:'400px'}">
-  <section class="col-3 bg-info p-2 m-2">
-    <div><input type="button" class="btn btn-warning m-2 w-30" value="View By Customer ID" routerLink="/viewcustomer/bycustid"/></div>
-    <div><input type="button" class="btn btn-warning m-2 w-30" value="View By Customer Name" routerLink="/viewcustomer/byname"/></div>
-  </section>
-  <section class="col-6 p-2 m-2">
-    <h2>View Customer</h2>
-    <router-outlet></router-outlet>
-  </section>
-</article> -->
-
 <article class="m-4 mx-auto">
   <h2 class="mx-auto text-center" id="heading">Customer Details</h2>
   <nav class="col-4 p-2 mx-auto" *ngIf="storageservice.loginflag" id="child">
-      <a routerLink="/viewcustomer/bycustid" class="m-2 text-white" *ngIf="storageservice.role=='admin'">View By Customer Id</a>
-      <a routerLink="/viewcustomer/byname" class="m-2 text-white" *ngIf="storageservice.role=='admin'">View By Customer Name</a>
+      <a routerLink="/viewcustomer/bycustid" class="m-2 text-dark" *ngIf="storageservice.role=='admin'">View By Customer Id</a>
+      <a routerLink="/viewcustomer/byname" class="m-2 text-dark" *ngIf="storageservice.role=='admin'">View By Customer Name</a>
   </nav>
   <section class="col-6 p-2 mx-auto" style="margin-top: 100px">
     <router-outlet></router-outlet>

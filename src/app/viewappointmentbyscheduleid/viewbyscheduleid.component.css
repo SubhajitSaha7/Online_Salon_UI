@@ -1,0 +1,14 @@
+@media only screen and (max-width:600px){
+    table{
+        width: 100%;
+    }
+    th{
+        display: none;
+    }
+    td{
+        display: block;
+    }
+    #child a{
+        display: block;
+    }
+}

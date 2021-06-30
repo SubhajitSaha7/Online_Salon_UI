@@ -4,7 +4,7 @@
 </div>  
 <section>
   <div *ngIf="msg!=undefined" class="alert alert-danger">{{msg}}</div>
-  <table class="table table-primary table-striped table-hover">
+  <table class="table table-primary table-striped table-hover" *ngIf="appointments!=undefined">
     <tr>
       <th>Appointment ID</th>
       <th>Preferred Date</th>
