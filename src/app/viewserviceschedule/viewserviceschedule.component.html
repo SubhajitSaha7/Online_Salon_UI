@@ -1,13 +1,12 @@
 <article class="m-4 mx-auto">
   <h2 class="mx-auto text-center" id="heading">Service Schedule</h2>
   <nav class="col-6 p-2 mx-auto" *ngIf="storageservice.loginflag" id="child">
-      <a routerLink="/viewserviceschedule/byid" class="m-2 text-dark">View By Schedule Id</a>
-      <a routerLink="/viewserviceschedule/byserviceid" class="m-2 text-dark">View By Service Id</a>
-      <a routerLink="/viewserviceschedule/viewall" class="m-2 text-dark" *ngIf="storageservice.role=='admin'">All Schedules</a>
+    <a routerLink="/viewserviceschedule/byid" class="m-2 text-dark">View By Schedule Id</a>
+    <a routerLink="/viewserviceschedule/byserviceid" class="m-2 text-dark">View By Service Id</a>
+    <a routerLink="/viewserviceschedule/viewall" class="m-2 text-dark" *ngIf="storageservice.role=='admin'">All
+      Schedules</a>
   </nav>
   <section class="col-6 p-2 mx-auto" style="margin-top: 100px">
     <router-outlet></router-outlet>
   </section>
 </article>
-
-

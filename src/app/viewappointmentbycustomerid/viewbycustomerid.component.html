@@ -1,7 +1,7 @@
 <div class="col-md-4 mx-auto mt-2" *ngIf="storageservice.role=='admin'">
-  <input type="number" placeholder="Enter customer ID" [(ngModel)]="customerId" class="form-control"/>
-  <input type="button" value="Search" (click)="viewbycustomerid()" class="btn btn-info"/>
-</div>   
+  <input type="number" placeholder="Enter customer ID" [(ngModel)]="customerId" class="form-control" />
+  <input type="button" value="Search" (click)="viewbycustomerid()" class="btn btn-info" />
+</div>
 <section>
   <div *ngIf="msg!=undefined" class="alert alert-danger">{{msg}}</div>
   <table class="table table-primary table-striped table-hover" *ngIf="appointments!=undefined">

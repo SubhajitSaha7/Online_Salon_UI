@@ -1,8 +1,8 @@
 <div class="col-8 mx-auto p-2 m-2">
   <select name="txtsalonservice" [(ngModel)]="sname">
-    <option *ngFor="let s of services" value={{s.serviceName}}>{{s.serviceName}}</option>    
+    <option *ngFor="let s of services" value={{s.serviceName}}>{{s.serviceName}}</option>
   </select>
-  <input type="button" value="Search" (click)="viewBySalonService()" class="btn btn-info"/>
+  <input type="button" value="Search" (click)="viewBySalonService()" class="btn btn-info" />
 </div>
 
 <section>
@@ -29,7 +29,8 @@
       <td>{{s.salonAddress | titlecase}}</td>
       <td>{{s.salonLocation | titlecase}}</td>
       <td>{{s.salonCentreName | titlecase}}</td>
-      <td *ngIf="storageservice.role=='admin'"><a class="btn btn-warning text-white" routerLink="/editsalonservice/{{s.serviceId}}">Edit</a></td>
+      <td *ngIf="storageservice.role=='admin'"><a class="btn btn-warning text-white"
+          routerLink="/editsalonservice/{{s.serviceId}}">Edit</a></td>
     </tr>
   </table>
 </section>

@@ -1,7 +1,7 @@
 <div class="col-7 mx-auto mt-2">
-  <input type="number" placeholder="Enter salon service ID" [(ngModel)]="serviceId" class="form-control"/>
-  <input type="button" value="Search" (click)="viewbyserviceid()" class="btn btn-info m-2"/>
-</div>  
+  <input type="number" placeholder="Enter salon service ID" [(ngModel)]="serviceId" class="form-control" />
+  <input type="button" value="Search" (click)="viewbyserviceid()" class="btn btn-info m-2" />
+</div>
 <section>
   <div *ngIf="msg!=undefined" class="alert alert-danger">{{msg}}</div>
   <table class="table table-primary table-striped table-hover col-md-12" *ngIf="serviceschedule!=undefined">

@@ -1,71 +1,82 @@
 <header class="p-1 bg-info">
   <h1 class="text-center" id="maintitle">Online Salon Management</h1>
-  <div class="col-10 text-end" *ngIf="!storageservice.loginflag"><a routerLink="/login" style="cursor:pointer">Login</a></div>
+  <div class="col-10 text-end" *ngIf="!storageservice.loginflag"><a routerLink="/login" style="cursor:pointer">Login</a>
+  </div>
   <div class="col-10 text-end" *ngIf="storageservice.loginflag">
-  <span class="text-primary text-white">Hi {{storageservice.username|titlecase}} </span>
-  <a (click)="doLogout()" class="btn-link" style="cursor:pointer">Logout</a></div>
+    <span class="text-primary text-white">Hi {{storageservice.username|titlecase}} </span>
+    <a (click)="doLogout()" class="btn-link" style="cursor:pointer">Logout</a>
+  </div>
 </header>
 <article class="text-center mx-auto">
-<div class="dropdown">
-  <button class="dropbtn zoomin m-2 text-white" routerLink="" title="Home"><img src="../assets/images/home-150499_1280.png" height="80" width="80"></button>
-  
-</div>
+  <div class="dropdown">
+    <button class="dropbtn zoomin m-2 text-white" routerLink="" title="Home"><img
+        src="../assets/images/home-150499_1280.png" height="80" width="80"></button>
 
-<div class="dropdown">
-  <button class="dropbtn zoomin m-2 text-white" title="Services"><img src="../assets/images/servicesimg.jpeg" height="80" width="80"></button>
-  <div class="dropdown-content">
-    <a routerLink="addsalonservice" class="m-2 text-white" *ngIf="storageservice.role=='admin'">Add Salon Service</a>
-    <a routerLink="viewsalonservice" class="m-2 text-white" *ngIf="storageservice.role=='admin'">View Salon Service</a>
-    <a routerLink="viewsalonservice/byname" class="m-2 text-white" *ngIf="storageservice.role=='user'">View Salon Service</a>
   </div>
-</div>
 
-<div class="dropdown" *ngIf="storageservice.role=='user' || storageservice.role=='admin'">
-  <button class="dropbtn zoomin m-2 text-white" title="Book Now">
-    <img src="../assets/images/booknow.jfif" height="80" width="80" *ngIf="storageservice.role=='user'">
-    <img src="../assets/images/WhatsApp Image 2021-06-30 at 6.47.19 PM.jpeg" height="80" width="80"  *ngIf="storageservice.role=='admin'">
-  </button>
-  <div class="dropdown-content">
-    <a routerLink='addappointment' class="m-2 text-white" *ngIf="storageservice.role=='user'">Book Appointment</a>
-    <a routerLink='viewappointment' class="m-2 text-white" *ngIf="storageservice.role=='admin'">View Appointment</a>
-  </div>
-</div>
-
-<div class="dropdown">
-  <button class="dropbtn zoomin m-2 text-white" title="Schedules"><img src="../assets/images/schedule.jpg" height="80" width="80"></button>
-  <div class="dropdown-content">
-    <a routerLink='addserviceschedule' class="m-2 text-white" *ngIf="storageservice.role=='admin'">Add Salon Service Schedule</a>
-    <a routerLink='viewserviceschedule' class="m-2 text-white" *ngIf="storageservice.role=='admin'||storageservice.role=='user'">View Salon Service Schedule</a>
-  </div>
-</div>
-
-<div class="dropdown">
-  <button class="dropbtn zoomin m-2 text-white" title="Pay"><img src="../assets/images/pay.png" height="80" width="80"></button>
-  <div class="dropdown-content">
-    <a routerLink='addpayment' class="m-2 text-white" *ngIf="storageservice.role=='user'">Make Payment</a>
-    <a routerLink='viewpayment' class="m-2 text-white" *ngIf="storageservice.role=='admin'">View Payment Details</a>
-    <a routerLink='addbankacc' class="m-2 text-white" *ngIf="storageservice.role=='user'">Add Bank Account</a>
-    <a routerLink='viewbankacc/byid' class="m-2 text-white" *ngIf="storageservice.role=='admin'">View Bank Account</a>
-  </div>
-</div>
-
-<div class="dropdown">
-  <button class="dropbtn zoomin m-2 text-white" *ngIf="storageservice.role=='user'" routerLink='viewuser' title="User Info"><img src="../assets/images/userinfo.png" height="80" width="80"></button>
-  <div class="dropdown-content">
-    <a routerLink='/viewuser/bycustid' class="m-2 text-white">View Profile</a>
-    <a routerLink='/viewuser/bypaymentid' class="m-2 text-white">View Payment</a>
-    <a routerLink='/viewuser/appointments' class="m-2 text-white">View Appointments</a>
+  <div class="dropdown">
+    <button class="dropbtn zoomin m-2 text-white" title="Services"><img src="../assets/images/servicesimg.jpeg"
+        height="80" width="80"></button>
+    <div class="dropdown-content">
+      <a routerLink="addsalonservice" class="m-2 text-white" *ngIf="storageservice.role=='admin'">Add Salon Service</a>
+      <a routerLink="viewsalonservice" class="m-2 text-white" *ngIf="storageservice.role=='admin'">View Salon
+        Service</a>
+      <a routerLink="viewsalonservice/byname" class="m-2 text-white" *ngIf="storageservice.role=='user'">View Salon
+        Service</a>
     </div>
-</div>
-
-<div class="dropdown">
-  <button class="dropbtn zoomin m-2 text-white" *ngIf="storageservice.role=='admin'" title="Customer"><img src="../assets/images/R23cbd6007a75399c5b04d991195d0ecf.png" height="80" width="80"></button>
-  <div class="dropdown-content">
-    <a routerLink='viewcustomer' class="m-2 text-white" *ngIf="storageservice.role=='admin'">View Customer</a>
   </div>
-</div>
 
-<router-outlet></router-outlet>
+  <div class="dropdown" *ngIf="storageservice.role=='user' || storageservice.role=='admin'">
+    <button class="dropbtn zoomin m-2 text-white" title="Book Now">
+      <img src="../assets/images/booknow.jfif" height="80" width="80" *ngIf="storageservice.role=='user'">
+      <img src="../assets/images/WhatsApp Image 2021-06-30 at 6.47.19 PM.jpeg" height="80" width="80"
+        *ngIf="storageservice.role=='admin'">
+    </button>
+    <div class="dropdown-content">
+      <a routerLink='addappointment' class="m-2 text-white" *ngIf="storageservice.role=='user'">Book Appointment</a>
+      <a routerLink='viewappointment' class="m-2 text-white" *ngIf="storageservice.role=='admin'">View Appointment</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropbtn zoomin m-2 text-white" title="Schedules"><img src="../assets/images/schedule.jpg" height="80"
+        width="80"></button>
+    <div class="dropdown-content">
+      <a routerLink='addserviceschedule' class="m-2 text-white" *ngIf="storageservice.role=='admin'">Add Salon Service
+        Schedule</a>
+      <a routerLink='viewserviceschedule' class="m-2 text-white"
+        *ngIf="storageservice.role=='admin'||storageservice.role=='user'">View Salon Service Schedule</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropbtn zoomin m-2 text-white" title="Pay"><img src="../assets/images/pay.png" height="80"
+        width="80"></button>
+    <div class="dropdown-content">
+      <a routerLink='addpayment' class="m-2 text-white" *ngIf="storageservice.role=='user'">Make Payment</a>
+      <a routerLink='viewpayment' class="m-2 text-white" *ngIf="storageservice.role=='admin'">View Payment Details</a>
+      <a routerLink='addbankacc' class="m-2 text-white" *ngIf="storageservice.role=='user'">Add Bank Account</a>
+      <a routerLink='viewbankacc/byid' class="m-2 text-white" *ngIf="storageservice.role=='admin'">View Bank Account</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropbtn zoomin m-2 text-white" *ngIf="storageservice.role=='user'" routerLink='viewuser'
+      title="User Info"><img src="../assets/images/userinfo.png" height="80" width="80"></button>
+    <div class="dropdown-content">
+      <a routerLink='/viewuser/bycustid' class="m-2 text-white">View Profile</a>
+      <a routerLink='/viewuser/bypaymentid' class="m-2 text-white">View Payment</a>
+      <a routerLink='/viewuser/appointments' class="m-2 text-white">View Appointments</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropbtn zoomin m-2 text-white" *ngIf="storageservice.role=='admin'" title="Customer"><img
+        src="../assets/images/R23cbd6007a75399c5b04d991195d0ecf.png" height="80" width="80"></button>
+    <div class="dropdown-content">
+      <a routerLink='viewcustomer' class="m-2 text-white" *ngIf="storageservice.role=='admin'">View Customer</a>
+    </div>
+  </div>
+
+  <router-outlet></router-outlet>
 </article>
-
-

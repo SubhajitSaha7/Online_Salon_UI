@@ -1,6 +1,6 @@
 <div class="col-5 mx-auto p-2 m-2">
-  <input type="number" placeholder="Enter Payment Id" [(ngModel)]="id" class="form-control"/>
-  <input type="button" value="Search" (click)="viewbyid()" class="btn btn-info"/>
+  <input type="number" placeholder="Enter Payment Id" [(ngModel)]="id" class="form-control" />
+  <input type="button" value="Search" (click)="viewbyid()" class="btn btn-info" />
 </div>
 <section>
   <div *ngIf="msg!=undefined" class="alert alert-danger">{{msg}}</div>
@@ -21,7 +21,7 @@
       <td>Customer Id</td>
       <td>{{pmt.appointment.customer.userId}}</td>
     </tr>
-     <tr>
+    <tr>
       <td>Customer Name</td>
       <td>{{pmt.appointment.customer.name | titlecase}}</td>
     </tr>
@@ -40,7 +40,7 @@
     <tr>
       <td>Appointment Date</td>
       <td>{{pmt.appointment.preferredDate|date:'dd/MMM/yyyy'}}</td>
-    </tr> 
+    </tr>
 
   </table>
 </section>

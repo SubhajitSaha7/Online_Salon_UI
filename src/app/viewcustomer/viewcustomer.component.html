@@ -1,8 +1,10 @@
 <article class="m-4 mx-auto">
   <h2 class="mx-auto text-center" id="heading">Customer Details</h2>
   <nav class="col-4 p-2 mx-auto" *ngIf="storageservice.loginflag" id="child">
-      <a routerLink="/viewcustomer/bycustid" class="m-2 text-dark" *ngIf="storageservice.role=='admin'">View By Customer Id</a>
-      <a routerLink="/viewcustomer/byname" class="m-2 text-dark" *ngIf="storageservice.role=='admin'">View By Customer Name</a>
+    <a routerLink="/viewcustomer/bycustid" class="m-2 text-dark" *ngIf="storageservice.role=='admin'">View By Customer
+      Id</a>
+    <a routerLink="/viewcustomer/byname" class="m-2 text-dark" *ngIf="storageservice.role=='admin'">View By Customer
+      Name</a>
   </nav>
   <section class="col-6 p-2 mx-auto" style="margin-top: 100px">
     <router-outlet></router-outlet>

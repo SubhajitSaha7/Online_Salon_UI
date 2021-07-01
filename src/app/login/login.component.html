@@ -6,13 +6,15 @@
   <div *ngIf="storageservice.msg != undefined" class="alert alert-warning">{{storageservice.msg}}</div>
   <form #frm="ngForm" (ngSubmit)="doLogin()">
     <div class="fields text-start">User Id</div>
-    <div><input type="text" name="txtname" [(ngModel)]="login.userId" #loginuid="ngModel" required class="form-control"/></div>
+    <div><input type="text" name="txtname" [(ngModel)]="login.userId" #loginuid="ngModel" required
+        class="form-control" /></div>
     <div class="alert alert-danger" *ngIf="loginuid.invalid && loginuid.touched">UserId is Required</div>
 
-    <div class="fields text-start">Password</div> 
-    <div><input type="password" name="txtpwd" [(ngModel)]="login.password" #loginpwd="ngModel" required class="form-control"/></div>
+    <div class="fields text-start">Password</div>
+    <div><input type="password" name="txtpwd" [(ngModel)]="login.password" #loginpwd="ngModel" required
+        class="form-control" /></div>
     <div class="alert alert-danger" *ngIf="loginpwd.invalid && loginpwd.touched">Password is required</div>
 
     <div class="m-2"><input type="submit" value="Login" [disabled]="!frm.valid"></div>
- </form>
+  </form>
 </section>

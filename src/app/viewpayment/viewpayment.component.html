@@ -1,11 +1,10 @@
 <article class="m-4 mx-auto">
   <h2 class="mx-auto text-center" id="heading">Payment Details</h2>
   <nav class="col-4 p-2 mx-auto" *ngIf="storageservice.loginflag" id="child">
-      <a routerLink="/viewpayment/byid" class="m-2 text-dark" *ngIf="storageservice.role=='admin'">View By Payment Id</a>
-      <a routerLink="/viewpayment/viewall" class="m-2 text-dark" *ngIf="storageservice.role=='admin'">View All Payment</a>
+    <a routerLink="/viewpayment/byid" class="m-2 text-dark" *ngIf="storageservice.role=='admin'">View By Payment Id</a>
+    <a routerLink="/viewpayment/viewall" class="m-2 text-dark" *ngIf="storageservice.role=='admin'">View All Payment</a>
   </nav>
   <section class="col-6 p-2 mx-auto" style="margin-top: 100px">
     <router-outlet></router-outlet>
   </section>
 </article>
-
