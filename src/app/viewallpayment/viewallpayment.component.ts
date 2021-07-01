@@ -28,12 +28,6 @@ export class ViewallpaymentComponent implements OnInit {
 
   }
 
-
-  // deletebyid(id:number){
-  //   this.pmtservice.deleteemployee(id).subscribe(data=>{this.msg=data + "for ID "+id;
-  //                               this.pmtservice.viewallpayment().subscribe(data=>this.pmt=data);});
-  // }
-
   previous():void{
     --this.currentpage;
     let endrow:number = this.currentpage*3;

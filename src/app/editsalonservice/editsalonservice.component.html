@@ -1,8 +1,6 @@
 <section class="col-4 mx-auto card card-primary m-1 p-1">
   <h2 class="text-center">Edit Salon Service</h2>
-  <!--<div class="alert alert-success" *ngIf="msg!=undefined">{{msg}}</div>-->
   <div class="alert alert-danger" *ngIf="errorMsg != undefined">{{errorMsg}}
-    <!--<div *ngFor = "let e of errors">{{e}}</div>-->
   </div>
 
   <form #frm = 'ngForm' (ngSubmit)="editEmp()">
